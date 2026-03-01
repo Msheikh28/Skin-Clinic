@@ -14,16 +14,22 @@
 <body>
 
     <!-- Header -->
-    <header>
+    <header id="header">
         <div class="container">
             <nav>
-                <div class="logo">Ashiya Sheikh <span>Skin Clinic</span></div>
-                <div class="hamburger">☰</div>
+                <a href="#home" class="logo">Ashiya Sheikh <span>Skin Clinic</span></a>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#about">About Dr. Ashiya</a></li>
                     <li><a href="#treatments">Treatments</a></li>
-                    <li><a href="#gallery">Real Results</a></li>
+                    <li><a href="#gallery">Results</a></li>
+                    <!-- <li><a href="#book-appointment" class="btn btn-primary" style="padding: 10px 25px;">Book Now</a> -->
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -31,19 +37,21 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-bg-img">
-            <!-- Used placeholder due to generation quota -->
-            <!-- <img src="https://placehold.co/1920x1080/0F2C3A/FFFFFF?text=hero+background" alt="Clinic Ambience"
-                style="width: 100%; height: 100%; object-fit: cover; opacity: 0.5;"> -->
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-subtitle">Bespoke Aesthetic Care</span>
+                <h1>Healthy Skin,<br>Beautiful Confidence</h1>
+                <p>Advanced skincare treatments with personalized care. Experience the perfect blend of medical
+                    expertise and artistic vision with Dr. Ashiya Sheikh.</p>
+                <div class="hero-btns">
+                    <a href="#book-appointment" class="btn btn-primary">Book Consultation</a>
+                    <a href="#treatments" class="btn btn-outline">Our Services</a>
+                </div>
+            </div>
         </div>
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h1>Reveal Your True Radiance</h1>
-            <p>Advanced dermatology and aesthetic treatments tailored to your unique skin. Experience world-class care
-                with Dr. Ashiya sheikh.</p>
-            <a href="#book-appointment" class="btn btn-primary">Schedule Your Visit</a>
-            <a href="#treatments" class="btn btn-outline"
-                style="margin-left: 1rem; color: white; border-color: white;">View Treatments</a>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1570172619380-2126adce894a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                alt="Skin Clinic Ambience">
         </div>
     </section>
 
@@ -52,31 +60,27 @@
         <div class="container">
             <div class="doctor-grid">
                 <div class="doctor-image">
-                    <img src="PHOTO-2025-08-23-21-09-14.jpg" alt="Dr. Ashiya Sheikh"
-                        style="background-color: #eee; min-height: 400px;">
+                    <img src="PHOTO-2025-08-23-21-09-14.jpg" alt="Dr. Ashiya Sheikh">
                 </div>
                 <div class="doctor-info">
-                    <span class="subtitle">Meet The Expert</span>
+                    <span class="subtitle">Medical Director & Specialist</span>
                     <h2>Dr. Ashiya Sheikh</h2>
                     <div class="certifications">
                         <span class="cert-badge">Cosmetologist</span>
                         <span class="cert-badge">Tricologist</span>
-                        <span class="cert-badge">2+ Years Experience</span>
                         <span class="cert-badge">Skin Specialist</span>
+                        <span class="cert-badge">2+ Years Excellence</span>
                     </div>
-                    <p style="margin-bottom: 1rem;">
-                        Dr. Ashiya believes that healthy, radiant skin is the foundation of true confidence. With 2
-                        years of experience in medical and cosmetic dermatology, she blends clinical expertise with an
-                        artistic eye to deliver natural, personalized results. Dedicated to patient care and continuous
-                        learning, she focuses on enhancing beauty while maintaining skin health and integrity.
+                    <p>
+                        Dr. Ashiya Sheikh is a dedicated Cosmetologist and Tricologist with a passion for helping
+                        patients achieve their most confident selves through advanced skin and hair care.
                     </p>
                     <p>
-                        Dr. Ashiya believes that healthy, radiant skin is the foundation of true confidence. With 2
-                        years of experience in medical and cosmetic dermatology, she blends clinical expertise with an
-                        artistic eye to deliver natural, personalized results. Dedicated to patient care and continuous
-                        learning, she focuses on enhancing beauty while maintaining skin health and integrity.
+                        With over 2 years of clinical experience, she combines meticulous medical expertise with an
+                        artistic approach to aesthetic treatments. Her philosophy centers on "Healthy Skin, Beautiful
+                        Confidence," ensuring every patient receives personalized care tailored to their unique needs.
                     </p>
-
+                    <a href="#book-appointment" class="btn btn-outline">Consult with Dr. Ashiya</a>
                 </div>
             </div>
         </div>
@@ -86,22 +90,41 @@
     <section id="treatments" class="treatments-section">
         <div class="container">
             <div class="section-header">
-                <h2>Our Treatments</h2>
-                <!-- <p>Curated solutions for every skin concern, utilizing the latest FDA-approved technology.</p> -->
+                <h2>Our Bespoke Treatments</h2>
+                <p>Curated dermatological solutions tailored to your unique skin concerns, utilizing advanced technology
+                    and medical expertise.</p>
             </div>
-            <div class="treatment-tags-container">
-                <div class="treatment-tag">Skin Lightening Treatment</div>
-                <div class="treatment-tag">Microneedling</div>
-                <div class="treatment-tag">Pigmentation Treatment</div>
-                <div class="treatment-tag">Anti Aging Treatment</div>
-                <div class="treatment-tag">Melasma Treatment</div>
-                <div class="treatment-tag">Acne Treatment</div>
-                <div class="treatment-tag">Skin Tag Removal</div>
-                <div class="treatment-tag">Warts Removal</div>
-                <div class="treatment-tag">Mole Removal</div>
-                <div class="treatment-tag">Hijama Therapy</div>
-                <div class="treatment-tag">Wet Cupping Therapy</div>
-                <div class="treatment-tag">Dry Cupping Therapy</div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-magic"></i></div>
+                    <h3>Skin Lightening</h3>
+                    <a href="#book-appointment" class="service-link">Consult Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-vial"></i></div>
+                    <h3>Microneedling</h3>
+                    <a href="#book-appointment" class="service-link">Consult Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Anti-Aging</h3>
+                    <a href="#book-appointment" class="service-link">Consult Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Acne Treatment</h3>
+                    <a href="#book-appointment" class="service-link">Consult Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-cut"></i></div>
+                    <h3>Mole & Tag Removal</h3>
+                    <a href="#book-appointment" class="service-link">Consult Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-spa"></i></div>
+                    <h3>Hijama Therapy</h3>
+                    <a href="#book-appointment" class="service-link">Consult Now <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
         </div>
     </section>
@@ -110,8 +133,8 @@
     <section id="gallery" class="gallery-section">
         <div class="container">
             <div class="section-header">
-                <h2>Real Client Results</h2>
-                <p>See the transformative power of our personalized treatment plans.</p>
+                <h2>Visible Transformations</h2>
+                <p>Witness the power of science-backed aesthetic treatments with our real client results.</p>
             </div>
 
             <div class="ba-grid">
@@ -119,7 +142,7 @@
                 <div class="ba-card">
                     <div class="ba-images">
                         <div class="ba-img-wrapper">
-                            <img src="3.jpeg" alt="Acne Result" style="background: #eee;">
+                            <img src="3.jpeg" alt="Acne Result">
                             <span class="ba-label">Result</span>
                         </div>
                     </div>
@@ -129,7 +152,7 @@
                 <div class="ba-card">
                     <div class="ba-images">
                         <div class="ba-img-wrapper">
-                            <img src="2.jpeg" alt="Anti-Aging Result" style="background: #eee;">
+                            <img src="2.jpeg" alt="Anti-Aging Result">
                             <span class="ba-label">Result</span>
                         </div>
                     </div>
@@ -139,7 +162,7 @@
                 <div class="ba-card hidden special-case">
                     <div class="ba-images">
                         <div class="ba-img-wrapper">
-                            <img src="1.jpeg" alt="Pigmentation Result" style="background: #eee;">
+                            <img src="1.jpeg" alt="Pigmentation Result">
                             <span class="ba-label">Result</span>
                         </div>
                     </div>
@@ -149,7 +172,7 @@
                 <div class="ba-card hidden special-case">
                     <div class="ba-images">
                         <div class="ba-img-wrapper">
-                            <img src="4.jpeg" alt="Mole Removal Result" style="background: #eee;">
+                            <img src="4.jpeg" alt="Mole Removal Result">
                             <span class="ba-label">Result</span>
                         </div>
                     </div>
@@ -159,8 +182,64 @@
             <div style="text-align: center; margin-top: 3rem;">
                 <button id="view-more-btn" class="btn btn-outline">View Full Gallery</button>
             </div>
+        </div>
+    </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Patients Say</h2>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-content">"Dr. Ashiya is simply the best. Her attention to detail and gentle
+                    approach made me feel so comfortable. My skin has never looked better!"</p>
+                <p class="testimonial-author">— Sarah K., Skin Lightening Patient</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about our treatments and clinic.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Are the treatments safe for all skin types?</h4>
+                        <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, all our treatments are conducted after a thorough skin analysis. We customize every
+                            procedure according to your specific skin type and medical history to ensure maximum safety
+                            and efficacy.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How many sessions will I need?</h4>
+                        <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The number of sessions depends on the treatment and the severity of the concern. During your
+                            initial consultation, Dr. Ashiya will provide a personalized treatment plan with an
+                            estimated timeline.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Is there any downtime after procedures?</h4>
+                        <div class="faq-icon"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most of our treatments have minimal to no downtime. Some procedures like microneedling might
+                            cause mild redness for 24-48 hours, which Dr. Ashiya will discuss with you beforehand.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -230,41 +309,40 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
-                    <div class="logo" style="margin-bottom: 1rem; color: white;">Ashiya Sheikh<span> Skin Clinic</span>
-                    </div>
-                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">
-                        Your partner in achieving healthy, beautiful skin through science and compassion.
+                    <a href="#home" class="logo-footer">Ashiya Sheikh <span>Skin Clinic</span></a>
+                    <p>
+                        Your partner in achieving healthy, beautiful skin through science and compassion. Experience the
+                        pinnacle of aesthetic care.
                     </p>
-                    <div style="display: flex; gap: 1rem; font-size: 1.2rem;">
+                    <div class="social-links">
                         <a href="https://instagram.com/ashiyasheikh_skin_clinic" target="_blank"><i
                                 class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-col">
                     <h3>Contact Us</h3>
                     <ul class="contact-info">
-                        <!-- <li><i class="fas fa-map-marker-alt"></i> 123 Wellness Blvd, Beverly Hills, CA</li> -->
-                        <li><i class="fas fa-phone"></i>9850096786</li>
+                        <li><i class="fas fa-phone"></i> +91 98500 96786</li>
                         <li><i class="fas fa-envelope"></i> ashiyawasi95@gmail.com</li>
-                        <li><i class="fas fa-clock"></i> Mon-Sat: 11am - 8pm</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 11:00 AM - 08:00 PM</li>
                     </ul>
                 </div>
 
-                <!-- <div class="footer-col">
-                    <h3>Quick Links</h3>
+                <div class="footer-col">
+                    <h3>Legal</h3>
                     <ul class="footer-links">
-                        <li><a href="#about">About Dr. Mitchell</a></li>
-                        <li><a href="#treatments">Our Treatments</a></li>
-                        <li><a href="#gallery">Before & After</a></li>
-                        <li><a href="#">Patient Resources</a></li>
                         <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Patient Rights</a></li>
                     </ul>
-                </div> -->
+                </div>
             </div>
 
             <div class="copyright">
-                <p>&copy; 2025 Skin Clinic. All rights reserved.</p>
+                <p>&copy; 2026 Ashiya Sheikh Skin Clinic. All rights reserved.</p>
             </div>
         </div>
     </footer>

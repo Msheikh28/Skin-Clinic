@@ -1,85 +1,58 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Toggle
+    // 1. Sticky Header & Active Link Highlighting
+    const header = document.getElementById('header');
+    const sections = document.querySelectorAll('section[id]');
+
+    window.addEventListener('scroll', () => {
+        // Sticky Header
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+
+        // Active Link Highlighting
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop - 150) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(a => {
+            a.classList.remove('active');
+            if (a.getAttribute('href').includes(current)) {
+                a.classList.add('active');
+            }
+        });
+    });
+
+    // 2. Mobile Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
     if (hamburger) {
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            hamburger.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+            hamburger.classList.toggle('toggle');
         });
     }
 
-    // Smooth Scroll for Anchor Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-                // Close mobile menu if open
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    hamburger.innerHTML = '☰';
-                }
-            }
-        });
-    });
-
-    // Simple fade-in animation on scroll
-    const observerOptions = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    const animatedElements = document.querySelectorAll('.treatment-card, .doctor-info, .doctor-image, .ba-card');
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-
-    // View More Button Logic
+    // 3. View More Button Logic
     const viewMoreBtn = document.getElementById('view-more-btn');
     if (viewMoreBtn) {
         viewMoreBtn.addEventListener('click', () => {
-            const hiddenCards = document.querySelectorAll('.ba-card.hidden');
-            const allHiddenCards = document.querySelectorAll('.ba-card'); // To check if we are expanding or collapsing
-
-            // If there are currently hidden cards, we show them
+            const hiddenCards = document.querySelectorAll('.ba-grid .ba-card.hidden');
             if (hiddenCards.length > 0) {
                 hiddenCards.forEach(card => {
                     card.classList.remove('hidden');
-                    // Add animation to newly revealed cards
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    // Trigger reflow
-                    void card.offsetWidth;
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
+                    card.classList.add('animate'); // Trigger animation if observer is used
                 });
                 viewMoreBtn.textContent = 'Show Less';
             } else {
-                // If no hidden cards, it means all are shown, so we hide the extra ones (Case 3 and 4)
-                // We specifically target the last two cards for this simple implementation, or add a specific class if needed.
-                // Better approach: toggle 'hidden' back on the specific elements we revealed.
-                // For now, let's just query the last 2 .ba-card elements
-                const cards = document.querySelectorAll('.ba-card');
+                const cards = document.querySelectorAll('.ba-grid .ba-card');
                 if (cards.length >= 4) {
                     cards[2].classList.add('hidden');
                     cards[3].classList.add('hidden');
@@ -88,4 +61,51 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 4. FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            faqItems.forEach(i => i.classList.remove('active'));
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+
+    // 5. Scroll Animations (Intersection Observer)
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const animateElements = document.querySelectorAll('.service-card, .doctor-image, .doctor-info, .ba-grid, .testimonial-card, .faq-item');
+    animateElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        observer.observe(el);
+    });
+
+    // Handle the intersection observer adding the animate class
+    const updateAnimations = () => {
+        document.querySelectorAll('.animate').forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        });
+    };
+
+    // Check every 100ms if anything needs animating (simple fallback/sync)
+    setInterval(updateAnimations, 100);
 });
