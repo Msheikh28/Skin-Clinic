@@ -1,5 +1,5 @@
 /* 
-  Ashiya Sheikh Skin Clinic - Premium Design System 
+  Emerald Skin Clinic - Premium Design System 
   Colors: Beige, Soft Pink, Pastel Green, Light Blue, Deep Teal (for contrast)
   Fonts: Cormorant Garamond (Headings), Montserrat (Body)
 */
@@ -732,12 +732,18 @@ footer {
 }
 
 .booking-form-container {
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
   background: var(--white);
   padding: 60px;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
 }
 
 .form-group {
@@ -822,6 +828,11 @@ textarea.form-control {
   .doctor-image img {
     width: 80%;
     margin: 0 auto;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .nav-links {
